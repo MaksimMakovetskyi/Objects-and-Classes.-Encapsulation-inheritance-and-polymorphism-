@@ -7,14 +7,14 @@ class Student:
         self.courses_in_progress = []
         self.grades = {}
 
-def rate_lecturer(self, lecturer, course, grade):
-    if isinstance (lecturer, Lecturer) \
+    def rate_lecturer(self, lecturer, course, grade):
+            if isinstance (lecturer, Lecturer) \
             and course in lecturer.courses_attached \
             and course in self.courses_in_progress and grade <= 10:
                 lecturer.grades += [grade]
             else:
                 return 'Oшибкa'
-
+ 
     def get_avg_grade(self):
         if self.grades:
         sum_hw = 0
@@ -24,7 +24,7 @@ def rate_lecturer(self, lecturer, course, grade):
             count += len(grades)
         return round(sum_hw / count, 2)
     else:
-
+        return 'Ошибка'
 
     def __str(self):
         res = f'Имя: {self.name} \n'\
